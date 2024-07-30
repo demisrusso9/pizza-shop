@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import { Dashboard } from './app/dashboard'
+import { Orders } from './app/orders/orders'
 import { SignIn } from './auth/sign-in'
 import { SignUp } from './auth/sign-up'
 import { AppLayout } from './layouts/app'
@@ -11,7 +12,10 @@ export function Routes() {
     {
       path: '/',
       element: <AppLayout />,
-      children: [{ path: '/', element: <Dashboard /> }],
+      children: [
+        { path: '/', element: <Dashboard /> },
+        { path: '/orders', element: <Orders /> },
+      ],
     },
     {
       path: '/',
