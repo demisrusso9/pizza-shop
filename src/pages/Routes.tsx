@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
+import { NotFound } from './404'
 import { Dashboard } from './app/dashboard/dashboard'
 import { Orders } from './app/orders/orders'
 import { SignIn } from './auth/sign-in'
@@ -12,6 +13,7 @@ export function Routes() {
     {
       path: '/',
       element: <AppLayout />,
+      errorElement: <NotFound />,
       children: [
         { path: '/', element: <Dashboard /> },
         { path: '/orders', element: <Orders /> },
