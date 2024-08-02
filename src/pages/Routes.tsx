@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import { Dashboard } from './app/dashboard'
+import { Dashboard } from './app/dashboard/dashboard'
 import { Orders } from './app/orders/orders'
 import { SignIn } from './auth/sign-in'
 import { SignUp } from './auth/sign-up'
