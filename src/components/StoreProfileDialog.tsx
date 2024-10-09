@@ -4,8 +4,8 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
-import { getManagedRestaurant } from '@/api/get-managed-restaurant'
-import { updateProfile } from '@/api/update-profile'
+import { getManagedRestaurant } from '@/api/restaurant/get-managed-restaurant'
+import { updateProfile } from '@/api/profile/update-profile'
 
 import { Button } from './ui/button'
 import {

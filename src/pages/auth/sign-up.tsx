@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
-import { registerRestaurant } from '@/api/register-restaurant'
+import { registerRestaurant } from '@/api/auth/register-restaurant'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -35,19 +35,24 @@ export function SignUp() {
     mutationFn: registerRestaurant,
   })
 
-  async function handleSignUp(data: SignUpFormData) {
+  async function handleSignUp({
+    email,
+    phone,
+    managerName,
+    restaurantName,
+  }: SignUpFormData) {
     try {
       await registerRestaurantFn({
-        restaurantName: data.restaurantName,
-        managerName: data.managerName,
-        phone: data.phone,
-        email: data.email,
+        restaurantName,
+        managerName,
+        phone,
+        email,
       })
 
       toast.success('Restaurante cadastrado com sucesso', {
         action: {
           label: 'Login',
-          onClick: () => navigate(`/sign-in?email=${data.email}`),
+          onClick: () => navigate(`/sign-in?email=${email}`),
         },
       })
     } catch {

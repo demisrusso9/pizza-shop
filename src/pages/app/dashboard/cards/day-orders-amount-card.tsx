@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { Utensils } from 'lucide-react'
 
-import { getDayOrdersAmount } from '@/api/get-day-orders-amount'
+import { getDayOrdersAmount } from '@/api/metrics/get-day-orders-amount'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export function DayOrdersAmountCard() {
